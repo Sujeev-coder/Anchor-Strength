@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Anchor Strength — Personal Training, Kettlebell Training, Nutrition & Powerlifting Coaching. Chandra Shekhar Amanaganti coaching professional strength and fitness programs.">
-    <meta name="keywords" content="anchor strength, personal trainer, kettlebell training, powerlifting coach, nutrition coaching, fitness coaching">
-    <meta name="author" content="Chandra Shekhar Amanaganti - Anchor Strength">
-    <title>Anchor Strength | Personal Training, Kettlebell & Powerlifting Coaching</title>
+    <meta name="description" content="Forged Fitness — Personal Training, Kettlebell Training, Nutrition & Powerlifting Coaching. Chandra Shekhar Amanaganti coaching professional strength and fitness programs.">
+    <meta name="keywords" content="forged fitness, personal trainer, kettlebell training, powerlifting coach, nutrition coaching, fitness coaching">
+    <meta name="author" content="Chandra Shekhar Amanaganti - Forged Fitness">
+    <title>Forged Fitness | Personal Training, Kettlebell & Powerlifting Coaching</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +25,7 @@
             --color-bg: #0a0a0a;
             --color-bg-secondary: #111111;
             --color-bg-card: rgba(18, 18, 18, 0.85);
+            --color-bg-nav: rgba(10, 10, 10, 0.92);
             --color-gold: #d4a843;
             --color-gold-light: #f0d078;
             --color-gold-dark: #b08930;
@@ -37,7 +38,7 @@
 
             /* Gradients */
             --gradient-gold: linear-gradient(135deg, #d4a843, #f0d078, #d4a843);
-            --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+            --gradient-dark: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-secondary) 100%);
             --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
             --gradient-hero: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.75) 100%);
             --gradient-neon: linear-gradient(90deg, #d4a843, #f0d078, #e8c547, #d4a843);
@@ -65,6 +66,119 @@
             --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-smooth: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             --transition-spring: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        [data-theme="light"] {
+            --color-bg: #f5f7fa;
+            --color-bg-secondary: #ffffff;
+            --color-bg-card: rgba(255, 255, 255, 0.9);
+            --color-bg-nav: rgba(255, 255, 255, 0.95);
+            --color-gold: #a67c1e;
+            --color-gold-light: #b38b22;
+            --color-gold-dark: #8c6717;
+            --color-white: #0a0a0a;
+            --color-white-soft: rgba(0, 0, 0, 0.85);
+            --color-white-muted: rgba(0, 0, 0, 0.65);
+            --color-white-subtle: rgba(0, 0, 0, 0.08);
+            
+            --gradient-dark: linear-gradient(180deg, #f5f7fa 0%, #eef1f6 100%);
+            --gradient-glass: linear-gradient(135deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0.01) 100%);
+            
+            --glass-bg: rgba(255, 255, 255, 0.6);
+            --glass-border: rgba(0, 0, 0, 0.08);
+            
+            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.08);
+            --shadow-glow: 0 0 25px rgba(166, 124, 30, 0.2);
+            --shadow-gold: 0 8px 32px rgba(166, 124, 30, 0.15);
+        }
+
+        /* Light Theme Specific Overrides */
+        [data-theme="light"] h1,
+        [data-theme="light"] h2,
+        [data-theme="light"] h3,
+        [data-theme="light"] h4,
+        [data-theme="light"] h5,
+        [data-theme="light"] h6 {
+            color: #0a0a0a;
+        }
+
+        /* Keep Hero Section cinematic and legible by forcing white text */
+        [data-theme="light"] .hero-title,
+        [data-theme="light"] .hero-title .line {
+            color: #ffffff;
+        }
+        
+        [data-theme="light"] .hero-subtitle {
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        [data-theme="light"] .hero-badge {
+            color: #d4a843; /* Original brighter gold for dark hero bg */
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        [data-theme="light"] .hero .btn-secondary {
+            color: #ffffff;
+            border-color: rgba(212, 168, 67, 0.5);
+        }
+        
+        [data-theme="light"] .hero .btn-secondary:hover {
+            color: #0a0a0a;
+        }
+
+        [data-theme="light"] .scroll-indicator span {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        /* Ensure navbar remains visible over the dark hero section before scrolling */
+        [data-theme="light"] .navbar:not(.scrolled) .nav-logo,
+        [data-theme="light"] .navbar:not(.scrolled) .nav-logo .logo-highlight {
+            color: #ffffff;
+        }
+        
+        [data-theme="light"] .navbar:not(.scrolled) .nav-links a {
+            color: rgba(255, 255, 255, 0.85);
+        }
+        
+        [data-theme="light"] .navbar:not(.scrolled) .hamburger span {
+            background: #ffffff;
+        }
+        
+        [data-theme="light"] .navbar:not(.scrolled) .theme-toggle {
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #d4a843;
+        }
+
+        [data-theme="light"] .form-group input,
+        [data-theme="light"] .form-group textarea,
+        [data-theme="light"] .form-group select {
+            background: rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        [data-theme="light"] .form-group input::placeholder,
+        [data-theme="light"] .form-group textarea::placeholder {
+            color: rgba(0, 0, 0, 0.4);
+        }
+        
+        [data-theme="light"] .form-group select option {
+            background: #ffffff;
+            color: #0a0a0a;
+        }
+
+        [data-theme="light"] .slider-dot {
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="light"] .testimonial-card:hover {
+            background: rgba(0, 0, 0, 0.04);
+        }
+
+        [data-theme="light"] .service-btn {
+            background: rgba(166, 124, 30, 0.15);
+            border-color: rgba(166, 124, 30, 0.3);
+            font-weight: 700;
         }
 
         /* ============================================
@@ -252,7 +366,7 @@
 
         .navbar.scrolled {
             padding: 12px 0;
-            background: rgba(10, 10, 10, 0.92);
+            background: var(--color-bg-nav);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--glass-border);
@@ -331,6 +445,32 @@
             box-shadow: var(--shadow-glow);
         }
 
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid var(--glass-border);
+            color: var(--color-gold);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all var(--transition-fast);
+        }
+
+        .theme-toggle:hover {
+            background: rgba(212, 168, 67, 0.1);
+            transform: rotate(15deg);
+        }
+
         /* Hamburger Menu */
         .hamburger {
             display: none;
@@ -369,7 +509,7 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: rgba(10, 10, 10, 0.97);
+            background: var(--color-bg-nav);
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
             z-index: 999;
@@ -401,6 +541,7 @@
 
         @media (max-width: 992px) {
             .nav-links { display: none; }
+            .nav-cta { display: none; }
             .hamburger { display: flex; }
             .mobile-nav { display: flex; }
         }
@@ -866,6 +1007,9 @@
             transition: all var(--transition-smooth);
             overflow: hidden;
             cursor: default;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .service-card::before {
@@ -923,6 +1067,67 @@
             font-size: 0.9rem;
             color: var(--color-white-muted);
             line-height: 1.6;
+            min-height: 90px;
+            margin-bottom: 0;
+        }
+
+        .service-price {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 6px 14px;
+            background: rgba(212, 168, 67, 0.1);
+            color: var(--color-gold);
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            border: 1px solid rgba(212, 168, 67, 0.2);
+            font-family: var(--font-display);
+        }
+        
+        .service-details {
+            margin-top: 20px;
+            text-align: left;
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-details li {
+            font-size: 0.85rem;
+            color: var(--color-white-muted);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .service-details li i {
+            color: var(--color-gold);
+            font-size: 0.8rem;
+            margin-top: 3px;
+        }
+
+        .service-btn {
+            display: inline-block;
+            margin-top: auto;
+            padding: 12px 0;
+            width: 100%;
+            background: rgba(212, 168, 67, 0.1);
+            color: var(--color-gold);
+            border: 1px solid rgba(212, 168, 67, 0.5);
+            border-radius: 8px;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .service-btn:hover {
+            background: var(--gradient-gold);
+            color: #0a0a0a;
+            box-shadow: var(--shadow-glow);
+            border-color: transparent;
         }
 
         @media (max-width: 992px) {
@@ -951,38 +1156,49 @@
             position: relative;
             border-radius: 20px;
             overflow: hidden;
-            aspect-ratio: 3/4;
-            cursor: pointer;
-            group: true;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(var(--glass-blur));
+            display: flex;
+            flex-direction: column;
+            transition: all var(--transition-smooth);
         }
 
-        .transform-card img {
+        .transform-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 168, 67, 0.25);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .transform-img-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+        }
+
+        .transform-img-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
 
-        .transform-card:hover img {
+        .transform-card:hover .transform-img-wrapper img {
             transform: scale(1.1);
         }
 
-        .transform-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85) 100%);
+        .transform-content {
+            padding: 24px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
-            padding: 28px;
-            transition: all var(--transition-smooth);
-        }
-
-        .transform-card:hover .transform-overlay {
-            background: linear-gradient(180deg, rgba(212,168,67,0.1) 0%, rgba(0,0,0,0.9) 100%);
+            flex-grow: 1;
         }
 
         .transform-label {
+            position: absolute;
+            top: 16px;
+            right: 16px;
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -995,20 +1211,32 @@
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-            width: fit-content;
-            margin-bottom: 10px;
+            z-index: 2;
         }
 
-        .transform-overlay h3 {
+        .transform-content h3 {
             font-family: var(--font-display);
             font-size: 1.15rem;
             font-weight: 700;
             margin-bottom: 4px;
         }
 
-        .transform-overlay p {
+        .transform-stats {
             font-size: 0.85rem;
+            color: var(--color-gold);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .transform-quote {
+            font-size: 0.9rem;
             color: var(--color-white-muted);
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 0;
+            position: relative;
+            padding-left: 12px;
+            border-left: 2px solid var(--color-gold);
         }
 
         @media (max-width: 768px) {
@@ -1163,160 +1391,133 @@
         }
 
         /* ============================================
-           STATS SECTION
+           FAQ SECTION
            ============================================ */
-        .stats {
-            padding: 80px 0;
+        .faq {
+            padding: var(--section-padding);
+            background: var(--color-bg-secondary);
             position: relative;
-            overflow: hidden;
         }
 
-        .stats::before {
+        .faq::before {
             content: '';
             position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(212, 168, 67, 0.03) 0%, transparent 50%);
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 168, 67, 0.04) 0%, transparent 70%);
+            pointer-events: none;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
 
-        .stat-card {
-            text-align: center;
-            padding: 40px 20px;
+        .faq-item {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
-            border-radius: 20px;
+            border-radius: 16px;
             backdrop-filter: blur(var(--glass-blur));
-            transition: all var(--transition-fast);
-            position: relative;
             overflow: hidden;
+            transition: all var(--transition-fast);
         }
 
-        .stat-card::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--gradient-gold);
-            transform: scaleX(0);
-            transition: transform var(--transition-smooth);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
+        .faq-item:hover {
             border-color: rgba(212, 168, 67, 0.2);
         }
 
-        .stat-card:hover::after {
-            transform: scaleX(1);
+        .faq-item.active {
+            border-color: rgba(212, 168, 67, 0.35);
+            box-shadow: var(--shadow-gold);
         }
 
-        .stat-icon {
-            width: 56px;
-            height: 56px;
-            margin: 0 auto 16px;
-            border-radius: 16px;
-            background: rgba(212, 168, 67, 0.08);
+        .faq-question {
+            width: 100%;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            color: var(--color-gold);
-        }
-
-        .stat-number {
+            justify-content: space-between;
+            padding: 24px 28px;
+            background: transparent;
+            border: none;
+            color: var(--color-white);
             font-family: var(--font-display);
-            font-size: 2.8rem;
-            font-weight: 900;
-            background: var(--gradient-gold);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.2;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            text-align: left;
+            gap: 16px;
         }
 
-        .stat-label {
-            font-size: 0.9rem;
+        .faq-question:hover {
+            color: var(--color-gold-light);
+        }
+
+        .faq-question span {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .faq-icon {
+            color: var(--color-gold);
+            font-size: 1rem;
+            width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .faq-arrow {
+            font-size: 0.85rem;
+            color: var(--color-gold);
+            transition: transform var(--transition-fast);
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0 28px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 28px 24px;
+        }
+
+        .faq-answer p {
+            font-size: 0.95rem;
             color: var(--color-white-muted);
-            margin-top: 4px;
+            line-height: 1.8;
+            padding-left: 34px;
         }
 
         @media (max-width: 768px) {
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 480px) {
-            .stats-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-            .stat-card { padding: 28px 16px; }
-            .stat-number { font-size: 2rem; }
-        }
-
-        /* ============================================
-           CTA SECTION
-           ============================================ */
-        .cta-section {
-            padding: var(--section-padding);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-wrapper {
-            position: relative;
-            padding: 80px 48px;
-            border-radius: 32px;
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .cta-bg {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-
-        .cta-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.25) contrast(1.1);
-        }
-
-        .cta-bg::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(212,168,67,0.15) 50%, rgba(0,0,0,0.7) 100%);
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-content .section-title {
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            margin-bottom: 20px;
-        }
-
-        .cta-content .section-subtitle {
-            margin-bottom: 40px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        @media (max-width: 576px) {
-            .cta-wrapper { padding: 48px 24px; border-radius: 20px; }
+            .faq-question {
+                padding: 20px 20px;
+                font-size: 0.95rem;
+            }
+            .faq-answer {
+                padding: 0 20px;
+            }
+            .faq-item.active .faq-answer {
+                padding: 0 20px 20px;
+            }
+            .faq-answer p {
+                padding-left: 0;
+            }
         }
 
         /* ============================================
@@ -1758,33 +1959,41 @@
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="#" class="nav-logo">
-                ANCHOR <span class="logo-highlight">STRENGTH</span>
+                FORGED <span class="logo-highlight">FITNESS</span>
             </a>
 
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About Coach</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#transformations">Results</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#transformations">Transformations</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
 
-            <a href="#contact" class="nav-cta">Join Now</a>
-
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-actions">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <a href="#contact" class="nav-cta">Join Now</a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Mobile Nav -->
     <div class="mobile-nav" id="mobileNav">
-        <a href="#about">About</a>
+        <a href="#hero">Home</a>
+        <a href="#about">About Coach</a>
         <a href="#services">Services</a>
-        <a href="#transformations">Results</a>
-        <a href="#testimonials">Reviews</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#transformations">Transformations</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
         <a href="#contact" class="nav-cta" style="margin-top: 12px;">Join Now</a>
     </div>
@@ -1803,10 +2012,10 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <i class="fas fa-circle"></i>
-                @anchorstrengthofficial
+                @forgedfitnessofficial
             </div>
             <h1 class="hero-title">
-                <span class="line">Anchor <span class="gold-text">Strength</span></span>
+                <span class="line">Forged <span class="gold-text">Fitness</span></span>
                 <span class="line">Build. Perfect. <span class="gold-text">Dominate.</span></span>
             </h1>
             <p class="hero-subtitle">
@@ -1816,7 +2025,7 @@
                 <a href="#contact" class="btn-primary">
                     <i class="fas fa-bolt"></i> Get Started
                 </a>
-                <a href="https://www.instagram.com/anchorstrengthofficial" target="_blank" class="btn-secondary">
+                <a href="https://www.instagram.com/forgedfitnessofficial" target="_blank" class="btn-secondary">
                     <i class="fab fa-instagram"></i> Follow on Instagram
                 </a>
             </div>
@@ -1890,8 +2099,8 @@
                         </div>
                     </div>
 
-                    <a href="#services" class="btn-primary">
-                        <i class="fas fa-arrow-right"></i> Explore Services
+                    <a href="#about" class="btn-primary">
+                        <i class="fas fa-arrow-right"></i> Know More
                     </a>
                 </div>
             </div>
@@ -1905,7 +2114,7 @@
         <div class="container">
             <div class="section-header reveal">
                 <div class="section-label">What I Offer</div>
-                <h2 class="section-title">Anchor Strength <span class="gold-text">Services</span></h2>
+                <h2 class="section-title">Forged Fitness <span class="gold-text">Services</span></h2>
                 <p class="section-subtitle">Expert coaching programs designed to help you achieve your fitness goals — from strength building to athletic performance.</p>
             </div>
 
@@ -1916,6 +2125,14 @@
                     </div>
                     <h3>Personal Training</h3>
                     <p>Customized one-on-one coaching tailored to your specific goals, fitness level, and lifestyle.</p>
+                    <div class="service-price">₹12,000 / month</div>
+                    <ul class="service-details">
+                        <li><i class="fas fa-check"></i> 1-on-1 private sessions</li>
+                        <li><i class="fas fa-check"></i> Form and technique correction</li>
+                        <li><i class="fas fa-check"></i> Custom weekly workout plan</li>
+                        <li><i class="fas fa-check"></i> Goal-oriented progress tracking</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Get Started</a>
                 </div>
 
                 <div class="service-card">
@@ -1924,6 +2141,14 @@
                     </div>
                     <h3>Kettlebell Training</h3>
                     <p>Specialized kettlebell programs for functional strength, power, and conditioning.</p>
+                    <div class="service-price">₹8,000 / month</div>
+                    <ul class="service-details">
+                        <li><i class="fas fa-check"></i> Advanced kettlebell techniques</li>
+                        <li><i class="fas fa-check"></i> Core and grip strength focus</li>
+                        <li><i class="fas fa-check"></i> High-intensity conditioning</li>
+                        <li><i class="fas fa-check"></i> Improved mobility and joint health</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Get Started</a>
                 </div>
 
                 <div class="service-card">
@@ -1932,6 +2157,14 @@
                     </div>
                     <h3>Nutrition Coaching</h3>
                     <p>Science-based nutrition planning and dietary guidance for optimal results and health.</p>
+                    <div class="service-price">₹4,000 / month</div>
+                    <ul class="service-details">
+                        <li><i class="fas fa-check"></i> Personalized macro & meal planning</li>
+                        <li><i class="fas fa-check"></i> Flexible dieting approach</li>
+                        <li><i class="fas fa-check"></i> Supplementation guidance</li>
+                        <li><i class="fas fa-check"></i> Weekly check-ins & adjustments</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Get Started</a>
                 </div>
 
                 <div class="service-card">
@@ -1940,87 +2173,26 @@
                     </div>
                     <h3>Powerlifting Coaching</h3>
                     <p>Expert technique coaching and program design for strength athletes and powerlifting competitors.</p>
+                    <div class="service-price">₹15,000 / month</div>
+                    <ul class="service-details">
+                        <li><i class="fas fa-check"></i> SBD (Squat, Bench, Deadlift) mastery</li>
+                        <li><i class="fas fa-check"></i> Meet prep and peaking blocks</li>
+                        <li><i class="fas fa-check"></i> Detailed video form analysis</li>
+                        <li><i class="fas fa-check"></i> Advanced strength programming</li>
+                    </ul>
+                    <a href="#contact" class="service-btn">Get Started</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================
-         TRANSFORMATIONS SECTION
-         ============================ -->
-    <section class="transformations" id="transformations">
-        <div class="container">
-            <div class="section-header reveal">
-                <div class="section-label">Real Results</div>
-                <h2 class="section-title">Member <span class="gold-text">Transformations</span></h2>
-                <p class="section-subtitle">Proof over promises — see the incredible journeys of our members.</p>
-            </div>
-
-            <div class="transform-grid stagger-children reveal">
-                <div class="transform-card">
-                    <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=600&auto=format&fit=crop" alt="Client transformation — weight loss journey" loading="lazy">
-                    <div class="transform-overlay">
-                        <div class="transform-label"><i class="fas fa-arrow-trend-down"></i> Fat Loss</div>
-                        <h3>Rahul's Journey</h3>
-                        <p>Lost 25 kg in 6 months</p>
-                    </div>
-                </div>
-
-                <div class="transform-card">
-                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop" alt="Client transformation — muscle building" loading="lazy">
-                    <div class="transform-overlay">
-                        <div class="transform-label"><i class="fas fa-arrow-trend-up"></i> Muscle Gain</div>
-                        <h3>Arjun's Transformation</h3>
-                        <p>Gained 12 kg lean muscle</p>
-                    </div>
-                </div>
-
-                <div class="transform-card">
-                    <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?q=80&w=600&auto=format&fit=crop" alt="Client transformation — strength gain" loading="lazy">
-                    <div class="transform-overlay">
-                        <div class="transform-label"><i class="fas fa-star"></i> Lifestyle</div>
-                        <h3>Priya's Story</h3>
-                        <p>Complete lifestyle transformation</p>
-                    </div>
-                </div>
-
-                <div class="transform-card">
-                    <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?q=80&w=600&auto=format&fit=crop" alt="Client transformation — body recomp" loading="lazy">
-                    <div class="transform-overlay">
-                        <div class="transform-label"><i class="fas fa-bolt"></i> Body Recomp</div>
-                        <h3>Vikram's Progress</h3>
-                        <p>Body recomposition in 4 months</p>
-                    </div>
-                </div>
-
-                <div class="transform-card">
-                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=600&auto=format&fit=crop" alt="Client transformation — strength training" loading="lazy">
-                    <div class="transform-overlay">
-                        <div class="transform-label"><i class="fas fa-dumbbell"></i> Strength</div>
-                        <h3>Sneha's Results</h3>
-                        <p>2x strength gains in 5 months</p>
-                    </div>
-                </div>
-
-                <div class="transform-card">
-                    <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=600&auto=format&fit=crop" alt="Client transformation — fitness journey" loading="lazy">
-                    <div class="transform-overlay">
-                        <div class="transform-label"><i class="fas fa-fire"></i> Shred</div>
-                        <h3>Karthik's Cut</h3>
-                        <p>Competition-ready in 12 weeks</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================
-         TESTIMONIALS SECTION
+         CLIENT TESTIMONIAL SECTION
          ============================ -->
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-header reveal">
-                <div class="section-label">Client Reviews</div>
+                <div class="section-label">Client Testimonials</div>
                 <h2 class="section-title">What Clients <span class="gold-text">Say</span></h2>
                 <p class="section-subtitle">Hear from the people who trusted the process and transformed their lives.</p>
             </div>
@@ -2131,55 +2303,161 @@
     </section>
 
     <!-- ============================
-         STATS SECTION
+         TRANSFORMATIONS SECTION
          ============================ -->
-    <section class="stats" id="stats">
+    <section class="transformations" id="transformations">
         <div class="container">
-            <div class="stats-grid stagger-children reveal">
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fab fa-instagram"></i></div>
-                    <div class="stat-number" data-target="2506">0</div>
-                    <div class="stat-label">Followers</div>
+            <div class="section-header reveal">
+                <div class="section-label">Real Results</div>
+                <h2 class="section-title">Client <span class="gold-text">Transformations</span></h2>
+                <p class="section-subtitle">Proof over promises — see the incredible journeys of our clients.</p>
+            </div>
+
+            <div class="transform-grid stagger-children reveal">
+                <div class="transform-card">
+                    <div class="transform-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?q=80&w=600&auto=format&fit=crop" alt="Client transformation — weight loss journey" loading="lazy">
+                        <div class="transform-label"><i class="fas fa-arrow-trend-down"></i> Fat Loss</div>
+                    </div>
+                    <div class="transform-content">
+                        <h3>Rahul's Journey</h3>
+                        <p class="transform-stats">Lost 25 kg in 6 months</p>
+                        <p class="transform-quote">"The customized diet and consistent kettlebell work completely changed my body. I never thought I could lose this much weight so safely!"</p>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-images"></i></div>
-                    <div class="stat-number" data-target="207">0</div>
-                    <div class="stat-label">Posts</div>
+
+                <div class="transform-card">
+                    <div class="transform-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop" alt="Client transformation — muscle building" loading="lazy">
+                        <div class="transform-label"><i class="fas fa-arrow-trend-up"></i> Muscle Gain</div>
+                    </div>
+                    <div class="transform-content">
+                        <h3>Arjun's Transformation</h3>
+                        <p class="transform-stats">Gained 12 kg lean muscle</p>
+                        <p class="transform-quote">"From skinny to strong. Coach Chandra's powerlifting principles helped me pack on serious lean mass while keeping my mobility intact."</p>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-user-plus"></i></div>
-                    <div class="stat-number" data-target="1268">0</div>
-                    <div class="stat-label">Following</div>
+
+                <div class="transform-card">
+                    <div class="transform-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?q=80&w=600&auto=format&fit=crop" alt="Client transformation — strength gain" loading="lazy">
+                        <div class="transform-label"><i class="fas fa-star"></i> Lifestyle</div>
+                    </div>
+                    <div class="transform-content">
+                        <h3>Priya's Story</h3>
+                        <p class="transform-stats">Complete lifestyle transformation</p>
+                        <p class="transform-quote">"It wasn't just about weight loss. The nutrition planning fixed my energy levels, and training has become the best part of my day."</p>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-trophy"></i></div>
-                    <div class="stat-number" data-target="100">0</div>
-                    <div class="stat-label">% Dedication</div>
+
+                <div class="transform-card">
+                    <div class="transform-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?q=80&w=600&auto=format&fit=crop" alt="Client transformation — body recomp" loading="lazy">
+                        <div class="transform-label"><i class="fas fa-bolt"></i> Body Recomp</div>
+                    </div>
+                    <div class="transform-content">
+                        <h3>Vikram's Progress</h3>
+                        <p class="transform-stats">Body recomposition in 4 months</p>
+                        <p class="transform-quote">"I dropped fat and built muscle simultaneously. The weekly check-ins kept me accountable, and the results speak for themselves."</p>
+                    </div>
+                </div>
+
+                <div class="transform-card">
+                    <div class="transform-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=600&auto=format&fit=crop" alt="Client transformation — strength training" loading="lazy">
+                        <div class="transform-label"><i class="fas fa-dumbbell"></i> Strength</div>
+                    </div>
+                    <div class="transform-content">
+                        <h3>Karthick's Results</h3>
+                        <p class="transform-stats">2x strength gains in 5 months</p>
+                        <p class="transform-quote">"I started barely able to deadlift the empty bar. Now I'm pulling over double my body weight. The technique coaching is unmatched."</p>
+                    </div>
+                </div>
+
+                <div class="transform-card">
+                    <div class="transform-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=600&auto=format&fit=crop" alt="Client transformation — fitness journey" loading="lazy">
+                        <div class="transform-label"><i class="fas fa-fire"></i> Shred</div>
+                    </div>
+                    <div class="transform-content">
+                        <h3>Sneha's Cut</h3>
+                        <p class="transform-stats">Competition-ready in 12 weeks</p>
+                        <p class="transform-quote">"The peaking block and strict macro adjustments dialed me in perfectly for my first meet. I couldn't have done it without expert guidance."</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================
-         CTA SECTION
+         FAQ SECTION
          ============================ -->
-    <section class="cta-section" id="cta">
+    <section class="faq" id="faq">
         <div class="container">
-            <div class="cta-wrapper reveal-scale">
-                <div class="cta-bg">
-                    <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=1920&auto=format&fit=crop" alt="Fitness motivation" loading="lazy">
+            <div class="section-header reveal">
+                <div class="section-label">Have Questions?</div>
+                <h2 class="section-title">Frequently Asked <span class="gold-text">Questions</span></h2>
+                <p class="section-subtitle">Everything you need to know before starting your transformation journey with Forged Fitness.</p>
+            </div>
+
+            <div class="faq-grid reveal">
+                <div class="faq-item" id="faq-1">
+                    <button class="faq-question" onclick="toggleFaq('faq-1')" aria-expanded="false">
+                        <span><i class="fas fa-dumbbell faq-icon"></i> What type of training programs do you offer?</span>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer personalized programs including Personal Training, Kettlebell Training, Nutrition Coaching, and Powerlifting Coaching. Each program is tailored to your specific goals, fitness level, and lifestyle. Whether you're a beginner or an advanced athlete, Coach Chandra Shekhar will design the perfect plan for you.</p>
+                    </div>
                 </div>
-                <div class="cta-content">
-                    <div class="section-label">Ready to Begin?</div>
-                    <h2 class="section-title">Start Your Fitness <span class="gold-text">Journey Today</span></h2>
-                    <p class="section-subtitle">Stop waiting for the perfect moment. Train with Coach Chandra Shekhar and unlock your true strength. Your future self will thank you.</p>
-                    <div class="cta-buttons">
-                        <a href="#contact" class="btn-primary">
-                            <i class="fas fa-rocket"></i> Join Now
-                        </a>
-                        <a href="https://www.instagram.com/anchorstrengthofficial" target="_blank" class="btn-secondary">
-                            <i class="fab fa-instagram"></i> Follow @anchorstrengthofficial
-                        </a>
+
+                <div class="faq-item" id="faq-2">
+                    <button class="faq-question" onclick="toggleFaq('faq-2')" aria-expanded="false">
+                        <span><i class="fas fa-clock faq-icon"></i> How long does it take to see results?</span>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most clients start noticing visible changes within 4–6 weeks of consistent training and nutrition. Significant transformations typically happen within 3–6 months. Results depend on your dedication, consistency, and adherence to the customized plan provided by the coach.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" id="faq-3">
+                    <button class="faq-question" onclick="toggleFaq('faq-3')" aria-expanded="false">
+                        <span><i class="fas fa-laptop faq-icon"></i> Do you offer online coaching?</span>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We offer comprehensive online coaching programs that include personalized workout plans, nutrition guidance, daily check-ins, video form corrections, and diet adjustments. Our online clients achieve the same incredible results as our in-person clients, no matter where they are in the world.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" id="faq-4">
+                    <button class="faq-question" onclick="toggleFaq('faq-4')" aria-expanded="false">
+                        <span><i class="fas fa-apple-whole faq-icon"></i> Do you provide diet and nutrition plans?</span>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! Nutrition is a key component of every program. Coach Chandra Shekhar creates science-based, customized meal plans that align with your training goals — whether it's fat loss, muscle gain, or body recomposition. Plans are flexible and adapted to your food preferences and lifestyle.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" id="faq-5">
+                    <button class="faq-question" onclick="toggleFaq('faq-5')" aria-expanded="false">
+                        <span><i class="fas fa-user faq-icon"></i> Is this suitable for beginners?</span>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>100%! We welcome all fitness levels — from complete beginners to competitive athletes. Every program is individually designed to match your current fitness level and progressively challenge you. Coach Chandra Shekhar will guide you through proper form, technique, and programming from day one.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" id="faq-6">
+                    <button class="faq-question" onclick="toggleFaq('faq-6')" aria-expanded="false">
+                        <span><i class="fas fa-calendar-check faq-icon"></i> How do I get started?</span>
+                        <i class="fas fa-chevron-down faq-arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Getting started is easy! Simply fill out the contact form below, send a message via WhatsApp, or DM us on Instagram <a href="https://www.instagram.com/forgedfitnessofficial" target="_blank" style="color: var(--color-gold);">@forgedfitnessofficial</a>. Coach Chandra Shekhar will schedule a consultation to understand your goals and create a personalized plan just for you.</p>
                     </div>
                 </div>
             </div>
@@ -2200,17 +2478,18 @@
             <div class="contact-grid">
                 <div class="contact-info reveal-left">
                     <p class="contact-text">
-                    Chandra Shekhar Amanaganti — Coach & Fitness Expert. Professional personal training, kettlebell coaching, nutrition guidance, and powerlifting expertise. Whether you're a beginner or competitive athlete, I'm ready to help you achieve your fitness goals.
-                </p>
+                        Chandra Shekhar Amanaganti — Coach & Fitness Expert. Professional personal training, kettlebell coaching, nutrition guidance, and powerlifting expertise. Whether you're a beginner or competitive athlete, I'm ready to help you achieve your fitness goals.
+                    </p>
 
-                <div class="contact-methods">
-                    <a href="https://www.instagram.com/anchorstrengthofficial" target="_blank" class="contact-method">
-                        <div class="contact-method-icon">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <div>
-                            <h4>Instagram</h4>
-                            <p>@anchorstrengthofficial</p>
+                    <div class="contact-methods">
+                        <a href="https://www.instagram.com/forgedfitnessofficial" target="_blank" class="contact-method">
+                            <div class="contact-method-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div>
+                                <h4>Instagram</h4>
+                                <p>@forgedfitnessofficial</p>
+                            </div>
                         </a>
 
                         <a href="https://wa.me/917559933033" target="_blank" class="contact-method">
@@ -2239,7 +2518,7 @@
                             </div>
                             <div>
                                 <h4>Location</h4>
-                                <p>SALINI ARCADE, LIC Jn., Neendoor, KOTTAYAM</p>
+                                <p>Boduppal, Uppal, Hyderabad</p>
                             </div>
                         </div>
                     </div>
@@ -2294,11 +2573,11 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <span class="nav-logo">
-                        ANCHOR <span class="logo-highlight">STRENGTH</span>
+                        FORGED <span class="logo-highlight">FITNESS</span>
                     </span>
-                    <p>Anchor Strength — Professional Personal Training, Kettlebell Training, Nutrition Coaching & Powerlifting Expertise. Coached by Chandra Shekhar Amanaganti. Transform your body and mind. 💪</p>
+                    <p>Forged Fitness — Professional Personal Training, Kettlebell Training, Nutrition Coaching & Powerlifting Expertise. Coached by Chandra Shekhar Amanaganti. Transform your body and mind. 💪</p>
                     <div class="footer-socials">
-                        <a href="https://www.instagram.com/anchorstrengthofficial" target="_blank" class="footer-social-link" aria-label="Instagram">
+                        <a href="https://www.instagram.com/forgedfitnessofficial" target="_blank" class="footer-social-link" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="https://wa.me/917559933033" target="_blank" class="footer-social-link" aria-label="WhatsApp">
@@ -2310,10 +2589,11 @@
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#about">About Coach</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#transformations">Transformations</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#transformations">Transformations</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -2331,15 +2611,15 @@
                 <div class="footer-col">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="https://www.instagram.com/anchorstrengthofficial" target="_blank">@anchorstrengthofficial</a></li>
+                        <li><a href="https://www.instagram.com/forgedfitnessofficial" target="_blank">@forgedfitnessofficial</a></li>
                         <li><a href="tel:+917559933033" target="_blank">+91 7559933033</a></li>
-                        <li><a href="#">Kottayam, India</a></li>
+                        <li><a href="#">Boduppal, Uppal, Hyderabad</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Anchor Strength — Chandra Shekhar Amanaganti. All rights reserved.</p>
+                <p>&copy; 2026 Forged Fitness — Chandra Shekhar Amanaganti. All rights reserved.</p>
                 <div class="footer-bottom-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
@@ -2498,43 +2778,24 @@
         startAutoSlide();
 
         // ============================================
-        // ANIMATED COUNTERS (Stats Section)
+        // FAQ ACCORDION
         // ============================================
-        const statNumbers = document.querySelectorAll('.stat-number');
-        let statsAnimated = false;
-
-        function animateCounters() {
-            statNumbers.forEach(el => {
-                const target = parseInt(el.dataset.target);
-                const duration = 2000;
-                const increment = target / (duration / 16);
-                let current = 0;
-
-                const updateCounter = () => {
-                    current += increment;
-                    if (current < target) {
-                        el.textContent = Math.ceil(current);
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        el.textContent = target;
-                    }
-                };
-
-                updateCounter();
+        function toggleFaq(id) {
+            const item = document.getElementById(id);
+            const isActive = item.classList.contains('active');
+            
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(faqItem => {
+                faqItem.classList.remove('active');
+                faqItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
             });
+            
+            // Toggle the clicked item (open if it was closed)
+            if (!isActive) {
+                item.classList.add('active');
+                item.querySelector('.faq-question').setAttribute('aria-expanded', 'true');
+            }
         }
-
-        const statsSection = document.getElementById('stats');
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !statsAnimated) {
-                    statsAnimated = true;
-                    animateCounters();
-                }
-            });
-        }, { threshold: 0.3 });
-
-        statsObserver.observe(statsSection);
 
         // ============================================
         // PARALLAX EFFECT (hero orbs)
@@ -2611,6 +2872,35 @@
                     link.style.color = 'var(--color-gold)';
                 }
             });
+        });
+        // ============================================
+        // THEME TOGGLE
+        // ============================================
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = themeToggleBtn.querySelector('i');
+        
+        // Check local storage or system preference
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        
+        const currentTheme = savedTheme ? savedTheme : (systemPrefersLight ? 'light' : 'dark');
+
+        if (currentTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            themeIcon.className = 'fas fa-moon';
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'light') {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeIcon.className = 'fas fa-moon';
+            }
         });
     </script>
 </body>
